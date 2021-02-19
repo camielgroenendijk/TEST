@@ -6,10 +6,6 @@
 @section('content')
     <h1>Welcome To Services</h1>
 
-
-
-
-
     <form action="/service" method="post">
         <input type="text" name="name">
         @csrf

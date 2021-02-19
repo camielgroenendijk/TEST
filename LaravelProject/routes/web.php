@@ -17,8 +17,8 @@ use App\Http\Controllers\ServiceController;
 
 Route::get('/home', [HelloController::class, 'home']);
 Route::get('/about', [HelloController::class, 'about']);
-Route::get('/service', [ServiceController::class, 'index']);
 Route::post('/service', [ServiceController::class, 'store']);
+Route::get('/service', [ServiceController::class, 'index']);
 
 
 Route::get('/customers', [\App\Http\Controllers\CustomerController::class, 'index']);
@@ -30,3 +30,11 @@ Route::patch('/customers/{customer}', [\App\Http\Controllers\CustomerController:
 Route::patch('/customers/{customer}', [\App\Http\Controllers\CustomerController::class, 'update']);
 Route::delete('/customers/{customer}', [\App\Http\Controllers\CustomerController::class, 'destroy']);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
